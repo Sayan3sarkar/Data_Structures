@@ -12,6 +12,7 @@ void QuickSort(int *a, int lower, int upper){
 		QuickSort(a, i+1, upper);
 	}
 }
+
 int split(int *a, int lower, int upper){
 	int p,q,pivot,temp;
 	pivot = a[lower];
