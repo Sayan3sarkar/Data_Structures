@@ -34,7 +34,7 @@ int LS_improved(vector <int> arr, int item){
     }
     return index;
 }
-// Time Complexity: For Succesful search. Best Case=Worst Case = O(n). For unsuccesful search, O(n/2)
+// Time Complexity: For Succesful search. Best Case=Worst Case = O(1). For unsuccesful search, O(n/2)
 
 int main()
 {
