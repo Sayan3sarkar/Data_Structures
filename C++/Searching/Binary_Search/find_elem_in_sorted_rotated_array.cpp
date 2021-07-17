@@ -70,13 +70,9 @@ int find_elem_in_sorted_rotated_array(vector <int> arr, int target){
         return index;
         
     int left_BS = BS_Ascending(arr, target, 0, index - 1);
+    return (left_BS != - 1 ? left_BS : -1);
     int right_BS = BS_Ascending(arr, target, index, n-1);
-    if( left_BS != -1)
-        return left_BS;
-    else if( right_BS != -1)
-        return right_BS;
-    else
-        return -1;
+    return (right_BS != - 1 ? right_BS : -1);
 }
 
 int main()
