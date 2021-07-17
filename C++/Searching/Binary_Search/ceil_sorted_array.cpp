@@ -9,29 +9,29 @@
 
 using namespace std;
 
+/*
+Algo:
+1. In Regular Binary Search, if target element is found, the element/index of element is returned.
+2. If not found, at the end of the loop, the target element must be withing the range of the final values of arr[start] and arr[end]
+3. So, ceil of the element is arr[start] [since value of start becomes greater than value of end, so arr[start]>arr[end]]
+*/
 int ceil_sorted_array(vector <int> arr, int target){
-    int n = arr.size();
-    
-    int start = 0, end = n - 1, mid, res = -1;
+    int start = 0, end = arr.size() - 1, mid;
     
     while(start <= end){
         mid = start + (end - start)/2;
         
-        if(arr[mid] == target){
-            res = arr[mid];
-            break;
-        }
+        if(arr[mid] == target)
+            return arr[mid];
         
-        else if(arr[mid] > target){
-            res = arr[mid];
-            end = mid - 1;
-        }
-        
-        else
+        else if(arr[mid] < target)
             start = mid + 1;
+
+        else
+            end = mid - 1;
     }
     
-    return res;
+    return arr[start];
 }
 
 int main()
@@ -41,3 +41,29 @@ int main()
 
     return 0;
 }
+
+//Complicated way
+// int ceil_sorted_array(vector <int> arr, int target){
+//     int n = arr.size();
+    
+//     int start = 0, end = n - 1, mid, res = -1;
+    
+//     while(start <= end){
+//         mid = start + (end - start)/2;
+        
+//         if(arr[mid] == target){
+//             res = arr[mid];
+//             break;
+//         }
+        
+//         else if(arr[mid] > target){
+//             res = arr[mid];
+//             end = mid - 1;
+//         }
+        
+//         else
+//             start = mid + 1;
+//     }
+    
+//     return res;
+// }
