@@ -25,6 +25,7 @@ void Selection_sort(vector <int> arr){
     for(auto& it: arr)
         cout << it << " ";
 }
+// Time Complexity: O(n^2)
 
 int main()
 {

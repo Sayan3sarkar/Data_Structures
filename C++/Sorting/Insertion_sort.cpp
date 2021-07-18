@@ -22,6 +22,7 @@ void Insertion_sort(vector <int> a){
     for(auto& it: a)
         cout << it << " ";
 }
+// Time Complexity: O(n^2)
 
 int main()
 {
